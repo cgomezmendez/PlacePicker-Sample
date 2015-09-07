@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PlaceFinder</string>
+    <string name="nearby_places">Nearby places</string>
+    <string name="accept">Accept</string>
+    <string name="cancel">Cancel</string>
+    <string name="activate_location">Activate Location</string>
+    <string name="location_needed">This application use location services to check your current location, please enable it in order to continue.</string>
+    <string name="permission.location.explanation">We need to get your location in order to be able to find the nearby places that are in your area.</string>
+    <string name="permission.location.grant">Grant location permission.</string>
+</resources>

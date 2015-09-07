@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:tools="http://schemas.android.com/tools"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <include
+            layout="@layout/toolbar"
+            />
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="@integer/a_places_ll_container_weight_sum">
+
+        <fragment
+            android:id="@+id/a_places_fm_map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/a_places_fm_map_height"
+            android:layout_weight="@integer/a_places_fm_map_weight"
+            android:tag="com.google.android.gms.maps.SupportMapFragment"
+            tools:layout="@layout/f_places_list"
+            />
+
+        <fragment
+            android:id="@+id/a_places_fm_placelist"
+            android:name="me.cristiangomez.placefinder.ui.activity.fragment.PlacesListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/a_places_fm_placelist_height"
+            android:layout_weight="@integer/a_places_fm_placelist_weight"
+            android:tag="me.cristiangomez.placefinder.ui.activity.fragment.PlacesListFragment"
+            tools:layout="@layout/f_places_list"
+            />
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PlaceFinder</string>
+    <string name="accept">Aceptar</string>
+    <string name="activate_location">Activar Servicios de ubicación.</string>
+    <string name="cancel">Cancelar</string>
+    <string name="location_needed">Esta aplicacion utiliza los servicios de ubicación para conocer su localizacion actual, porfavor activelos para continuar.</string>
+    <string name="nearby_places">Lugares cercanos.</string>
+</resources>

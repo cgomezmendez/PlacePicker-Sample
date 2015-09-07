@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="place"
+            type="me.cristiangomez.placefinder.model.Place"
+            />
+    </data>
+
+    <android.support.v7.widget.GridLayout
+        style="@style/item_place_gl_grid"
+        app:orientation="horizontal"
+        app:columnCount="@integer/item_place_gl_grid_column_count"
+        app:rowCount="@integer/item_place_gl_grid_column_count"
+        app:alignmentMode="alignBounds"
+        >
+        <ImageView
+            android:layout_width="@dimen/item_place_iv_icon_width"
+            android:layout_height="@dimen/item_place_iv_icon_height"
+            app:layout_column="@integer/item_place_iv_icon_column"
+            app:imageUrl="@{place.icon}"
+            android:scaleType="fitCenter"
+            tools:src="@drawable/common_signin_btn_icon_focus_dark"
+            app:layout_rowWeight="@integer/item_place_iv_icon_row_weight"
+            app:layout_rowSpan="@integer/item_place_iv_icon_row_span"
+            />
+
+        <TextView
+            android:layout_width="@dimen/item_place_tv_name_width"
+            android:layout_marginLeft="@dimen/item_place_tv_name_margin_left"
+            android:layout_marginStart="@dimen/item_place_tv_name_margin_left"
+            app:layout_column="@integer/item_place_tv_name_column"
+            app:layout_row="@integer/item_place_tv_name_row"
+            app:layout_gravity="fill_horizontal"
+            style="@style/tv_place_name"
+            android:text="@{place.name}"
+            tools:text="Banco BHD"
+            />
+        <TextView
+            app:layout_column="@integer/tv_place_address_column"
+            app:layout_row="@integer/tv_place_address_row"
+            style="@style/tv_place_address"
+            android:text="@{place.vicinity}"
+            tools:text="Avenida Presidente Antonio Guzmán Fernández 38, Santo Domingo"
+            />
+    </android.support.v7.widget.GridLayout>
+</layout>

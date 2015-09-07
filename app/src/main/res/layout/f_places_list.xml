@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/f_places_list_tv_permission_explanation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/tv_permission_explanation"
+        android:text="@string/permission.location.explanation"
+        android:visibility="gone"
+        tools:visibility="visible"
+        />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/f_places_list_btn_permission_grant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/permission.location.grant"
+        tools:visibility="visible"
+        />
+
+    <TextView
+        style="@style/tv_places_list_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/nearby_places"
+        />
+
+    <View
+        style="@style/horizontal_divider"
+        android:layout_height="@dimen/horizontal_divider_height"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_places"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        />
+</LinearLayout>

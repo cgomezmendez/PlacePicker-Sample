@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.android.application'
+apply plugin: 'com.android.databinding'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "me.cristiangomez.placefinder"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    Properties props = new Properties()
+    props.load(new FileInputStream("private.properties")) // this file needs to be create
+    buildTypes {
+        debug {
+            resValue "string", "google_api_key", props.googleApiKeyDebug
+            resValue "string", "google_api_key_browser", props.googleApiKeyDebug
+            resValue "string", "google_api_key_browser", props.googleApiKeyBrowserRelease
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "google_api_key", props.googleApiKeyRelease
+            resValue "string", "google_api_key_browser", props.googleApiKeyBrowserDebug
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    apt 'com.android.databinding:compiler:1.0-rc1'
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:recyclerview-v7:23.0.1'
+    compile 'com.android.support:gridlayout-v7:23.0.1'
+    compile 'com.google.android.gms:play-services-location:7.8.0'
+    compile 'com.google.android.gms:play-services-maps:7.8.0'
+    compile 'com.android.support:design:23.0.1'
+    compile 'com.github.bumptech.glide:glide:3.6.1'
+    compile 'com.squareup.retrofit:retrofit:2.0.0-beta1'
+    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta1'
+    compile 'com.orhanobut:logger:1.11'
+    compile 'fr.tvbarthel.blurdialogfragment:lib:2.1.4'
+}
